@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" fill="none" aria-label="Adani">
+<path d="M10 46 L26 18 L42 46 Z" stroke="#16243a" stroke-width="3" fill="none" stroke-linejoin="round"/>
+<line x1="18" y1="40" x2="34" y2="40" stroke="#16243a" stroke-width="3"/>
+<text x="56" y="42" font-family="Arial, sans-serif" font-weight="700" font-size="34" letter-spacing="2" fill="#16243a">adani</text>
+</svg>

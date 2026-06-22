@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" fill="none" aria-label="Vedanta">
+<circle cx="22" cy="30" r="18" stroke="#fff" stroke-width="3"/>
+<path d="M14 22 L22 40 L30 22" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="50" y="40" font-family="Georgia, serif" font-weight="700" font-size="32" letter-spacing="1" fill="#fff">vedanta</text>
+</svg>

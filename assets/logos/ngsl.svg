@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" fill="none" aria-label="NGSL">
+<rect x="2" y="14" width="36" height="36" rx="6" stroke="#16243a" stroke-width="3"/>
+<path d="M10 42 L20 22 L30 42" stroke="#16243a" stroke-width="3" fill="none" stroke-linejoin="round"/>
+<text x="52" y="42" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="34" letter-spacing="2" fill="#16243a">NGSL</text>
+</svg>

@@ -1,0 +1,38 @@
+# ============================================================
+# Surendra Engineering Enterprises — .gitignore
+# Keep the deployable site; exclude heavy mirrors, scrape
+# working files, redundant source uploads and OS cruft.
+# ============================================================
+
+# --- Heavy site mirrors (inspiration only — 2GB+, never deploy) ---
+phenomenonstudio/
+lizmontagens/
+
+# --- Scrape / research working files ---
+scrape/
+remove_iubenda.py
+
+# --- Original source uploads (already processed into assets/) ---
+Surendra_Engineering_Enterprises_Company_Profile_001.pdf
+BALCO_Logo.jpg
+Vedanta_logo_tagline_white_bg.jpg
+msme-micro-small-medium-enterprises-logo-png_seeklogo-259373.png
+a1ca0068beb8b0644183ddb780fda0.webp
+
+# --- OS / editor cruft ---
+.DS_Store
+**/.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# --- Dependencies / build (in case tooling is added later) ---
+node_modules/
+dist/
+.cache/
+
+# --- Logs / temp ---
+*.log
+/tmp/

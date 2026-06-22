@@ -1,0 +1,10 @@
+# Surendra Engineering Enterprises — robots.txt
+User-agent: *
+Allow: /
+
+# Block crawler access to source/inspiration working folders if deployed
+Disallow: /phenomenonstudio/
+Disallow: /lizmontagens/
+Disallow: /scrape/
+
+Sitemap: https://www.surendraengg.com/sitemap.xml
