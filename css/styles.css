@@ -144,25 +144,10 @@ h1, h2, h3, h4 {
 .btn-simple:hover svg { transform: translateX(5px); }
 
 /* ============================================================
-   PRELOADER
-   ============================================================ */
-.preloader { position: fixed; inset: 0; z-index: 9999; background: var(--bg); display: grid; place-items: center; transition: opacity .7s var(--ease), visibility .7s; }
-.preloader.is-done { opacity: 0; visibility: hidden; }
-/* repeat visits within a session skip the loader entirely (no flash) */
-.preloaded .preloader { display: none !important; }
-.preloader__inner { width: min(360px, 72vw); text-align: center; }
-.preloader__mark { font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: 0.18em; margin-left: 0.18em; }
-.preloader__mark .grad { display: inline-block; }
-.preloader__bar { height: 2px; background: var(--line); margin-top: 22px; border-radius: 4px; overflow: hidden; }
-.preloader__bar span { display: block; height: 100%; width: 0; background: var(--grad); }
-.preloader__pct { margin-top: 14px; font-size: 12px; letter-spacing: 0.16em; color: var(--muted); }
-
-/* ============================================================
    CURSOR + SCROLL PROGRESS
    ============================================================ */
 /* Click-spark canvas (replaces custom cursor) */
 .click-spark { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9500; }
-.scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--grad); z-index: 8000; }
 
 /* ============================================================
    HEADER / NAV

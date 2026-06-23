@@ -89,7 +89,6 @@
      3 · NAV — scrolled state, progress, active page/section
      ========================================================= */
   const nav = $('#nav');
-  const progressBar = $('#scrollProgress');
   const heroEl = document.querySelector('.hero, .page-hero');
   let navTrigger = 60;
   function calcTrigger() { navTrigger = heroEl ? Math.max(60, heroEl.offsetHeight - 100) : 60; }
@@ -106,7 +105,6 @@
       if (!menuOpen && y > navTrigger + 60 && y > lastY + 4) nav.classList.add('to-hide');
       else if (y < lastY - 4 || y <= navTrigger) nav.classList.remove('to-hide');
     }
-    if (progressBar) { const h = document.documentElement.scrollHeight - window.innerHeight; progressBar.style.width = (h > 0 ? (y / h) * 100 : 0) + '%'; }
     lastY = y;
   }
   window.addEventListener('scroll', onScroll, { passive: true });
