@@ -9,7 +9,7 @@
   'use strict';
   document.documentElement.classList.remove('no-js');
 
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReduced = false; // Override OS setting to ensure website feels alive
   const isTouch = window.matchMedia('(hover: none)').matches;
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));

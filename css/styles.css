@@ -549,8 +549,3 @@ a.crow:hover { border-color: var(--orange); transform: translateX(4px); backgrou
   .sectors-grid { grid-template-columns: 1fr; }
   .footer__top { grid-template-columns: 1fr; }
 }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-  [data-reveal] { opacity: 1; transform: none; }
-  .marquee__track { animation: none; }
-}
