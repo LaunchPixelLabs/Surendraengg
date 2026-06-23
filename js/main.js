@@ -46,40 +46,14 @@
   $$('[data-anim="lines"]').forEach(splitLines);
 
   /* =========================================================
-     1 · PRELOADER
+     1 · HERO INTRO TRIGGER
      ========================================================= */
-  const preloader = $('#preloader');
-  const bar = $('.preloader__bar span');
-  const pctEl = $('#preloaderPct');
   let introStarted = false;
-
-  // Show the preloader only ONCE per browser session; subsequent
-  // page navigations skip straight in (smooth multi-page feel).
-  let visited = false;
-  try { visited = !!sessionStorage.getItem('see_v'); sessionStorage.setItem('see_v', '1'); } catch (e) {}
-
-  function finishPreloader() {
-    if (preloader && !preloader.classList.contains('is-done')) {
-      preloader.classList.add('is-done');
-      setTimeout(() => preloader && preloader.remove(), 800);
-    }
+  window.addEventListener('load', () => {
     document.body.style.overflow = '';
     startHeroIntro();
-  }
-  if (preloader && !visited) {
-    let p = 0;
-    const iv = setInterval(() => {
-      p += Math.random() * 16 + 7;
-      if (p >= 100) { p = 100; clearInterval(iv); }
-      if (bar) bar.style.width = p + '%';
-      if (pctEl) pctEl.textContent = Math.floor(p);
-    }, 120);
-    window.addEventListener('load', () => {
-      setTimeout(() => { clearInterval(iv); if (bar) bar.style.width = '100%'; if (pctEl) pctEl.textContent = '100'; setTimeout(finishPreloader, 320); }, 350);
-    });
-    setTimeout(finishPreloader, 4200); // safety net
-  } else {
-    if (preloader) preloader.remove();
+  });
+  if (document.readyState === 'complete') {
     document.body.style.overflow = '';
     startHeroIntro();
   }
