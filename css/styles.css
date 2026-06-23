@@ -7,14 +7,30 @@
 
 /* Self-hosted variable fonts (mirrored from phenomenonstudio.com) */
 @font-face {
-  font-family: 'Bricolage Grotesque';
-  src: url('../assets/fonts/BricolageGrotesque-VariableFont_opsz.woff2') format('woff2');
-  font-weight: 200 800; font-stretch: 75% 100%; font-display: swap;
+  font-family: 'Milker';
+  src: url('../assets/fonts/Milker.otf') format('opentype');
+  font-weight: normal; font-style: normal; font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../assets/fonts/Helvetica.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
 }
 @font-face {
-  font-family: 'Albert Sans';
-  src: url('../assets/fonts/AlbertSans-VariableFont_wght.woff2') format('woff2');
-  font-weight: 100 900; font-display: swap;
+  font-family: 'Helvetica';
+  src: url('../assets/fonts/Helvetica-Oblique.ttf') format('truetype');
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../assets/fonts/helvetica-light-587ebe5a59211.ttf') format('truetype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../assets/fonts/Helvetica-Bold.ttf') format('truetype');
+  font-weight: 700; font-style: normal; font-display: swap;
 }
 
 :root {
@@ -57,7 +73,7 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-stopped { overflow: hidden; }
 
 body {
-  font-family: 'Albert Sans', system-ui, sans-serif;
+  font-family: 'Helvetica', system-ui, sans-serif;
   background: var(--bg);
   color: var(--white);
   line-height: 1.5;
@@ -72,8 +88,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 ::selection { background: var(--orange); color: #fff; }
 
 h1, h2, h3, h4 {
-  font-family: 'Bricolage Grotesque', 'Albert Sans', sans-serif;
-  font-weight: 600; line-height: 1.02; letter-spacing: -0.025em;
+  font-family: 'Milker', 'Helvetica', sans-serif;
+  font-weight: 700; line-height: 1.02; letter-spacing: -0.025em;
 }
 
 .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 var(--pad); position: relative; }
@@ -173,7 +189,7 @@ header.nav.is-scrolled .nav__logo { height: 36px; }
 .burger.is-open span:last-child { transform: translateY(-4px) rotate(-45deg); }
 .mobile-menu { position: fixed; inset: 0; z-index: 99; background: rgba(8,13,16,0.98); backdrop-filter: blur(20px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; opacity: 0; visibility: hidden; transition: opacity .45s var(--ease), visibility .45s; }
 .mobile-menu.is-open { opacity: 1; visibility: visible; }
-.mobile-menu a { font-family: 'Bricolage Grotesque'; font-size: clamp(1.6rem, 7vw, 2.4rem); color: var(--muted); transition: color .3s; }
+.mobile-menu a { font-family: 'Milker'; font-size: clamp(1.6rem, 7vw, 2.4rem); color: var(--muted); transition: color .3s; }
 .mobile-menu a:hover { color: #fff; }
 .mobile-menu .mm-cta { color: var(--orange); }
 
@@ -199,7 +215,7 @@ header.nav.is-scrolled .nav__logo { height: 36px; }
 
 .hero__ticker { margin-top: clamp(50px, 8vw, 96px); display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; }
 .hero__ticker .ti { background: rgba(8,13,16,0.55); backdrop-filter: blur(6px); padding: 24px; }
-.hero__ticker .ti b { display: block; font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: clamp(1.5rem, 2.6vw, 2.2rem); }
+.hero__ticker .ti b { display: block; font-family: 'Milker'; font-weight: 700; font-size: clamp(1.5rem, 2.6vw, 2.2rem); }
 .hero__ticker .ti span { font-size: 13px; color: var(--muted); }
 
 /* ============================================================
@@ -241,7 +257,7 @@ header.nav.is-scrolled .nav__logo { height: 36px; }
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; }
 .stat { background: var(--panel); padding: clamp(28px, 3vw, 44px); transition: background .4s; }
 .stat:hover { background: var(--panel-2); }
-.stat__num { font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: clamp(2.4rem, 4.6vw, 3.8rem); line-height: 1; }
+.stat__num { font-family: 'Milker'; font-weight: 700; font-size: clamp(2.4rem, 4.6vw, 3.8rem); line-height: 1; }
 .stat__num .grad { display: inline-block; }
 .stat__label { margin-top: 16px; font-weight: 600; font-size: 1.06rem; }
 .stat__desc { margin-top: 10px; font-size: 0.88rem; color: var(--muted); }
@@ -249,7 +265,7 @@ header.nav.is-scrolled .nav__logo { height: 36px; }
 .cert-chip { display: flex; align-items: center; gap: 16px; padding: 16px 22px; background: var(--glass); border: 1px solid var(--line); border-radius: var(--r-md); flex: 1 1 260px; transition: border-color .4s, transform .4s; }
 .cert-chip:hover { border-color: var(--orange); transform: translateY(-3px); }
 .cert-chip img { width: 52px; height: 52px; }
-.cert-chip strong { display: block; font-size: 0.98rem; font-family: 'Bricolage Grotesque'; }
+.cert-chip strong { display: block; font-size: 0.98rem; font-family: 'Milker'; }
 .cert-chip span { font-size: 0.78rem; color: var(--muted); }
 
 /* ============================================================
@@ -306,7 +322,7 @@ header.nav.is-scrolled .nav__logo { height: 36px; }
 .case__media img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.25) contrast(1.04); transition: filter .6s var(--ease); }
 .case:hover .case__media img { filter: none; }
 .case__client { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
-.case__value { font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: clamp(3rem, 7vw, 5.6rem); line-height: 0.92; }
+.case__value { font-family: 'Milker'; font-weight: 700; font-size: clamp(3rem, 7vw, 5.6rem); line-height: 0.92; }
 .case__value .grad { display: inline-block; }
 .case__name { font-size: clamp(1.3rem, 2.3vw, 2rem); margin: 14px 0; }
 .case__desc { color: var(--muted); max-width: 520px; line-height: 1.6; }
@@ -335,11 +351,11 @@ header.nav.is-scrolled .nav__logo { height: 36px; }
 .cap-col__title { display: flex; align-items: center; gap: 14px; font-size: 1.15rem; margin-bottom: 28px; }
 .cap-col__title i { width: 28px; height: 3px; border-radius: 3px; background: var(--orange); }
 .cap-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px 18px; }
-.cap-stats b { display: block; font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: clamp(1.8rem, 3vw, 2.5rem); }
+.cap-stats b { display: block; font-family: 'Milker'; font-weight: 700; font-size: clamp(1.8rem, 3vw, 2.5rem); }
 .cap-stats span { font-size: 0.8rem; color: var(--muted); }
 .cap-fleet { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 16px; }
 .cap-fleet li { font-size: 0.88rem; color: var(--muted); padding: 10px 0; border-bottom: 1px solid var(--line); }
-.cap-fleet li b { font-family: 'Bricolage Grotesque'; color: var(--orange); margin-right: 8px; }
+.cap-fleet li b { font-family: 'Milker'; color: var(--orange); margin-right: 8px; }
 .cap-lead { color: var(--muted); font-size: 0.92rem; margin-bottom: 20px; line-height: 1.6; }
 .cap-check li { font-size: 0.86rem; padding: 11px 0 11px 28px; position: relative; border-bottom: 1px solid var(--line); }
 .cap-check li::before { content: "✓"; position: absolute; left: 0; top: 10px; color: var(--orange); font-weight: 700; }
@@ -357,7 +373,7 @@ a.crow:hover { border-color: var(--orange); transform: translateX(4px); backgrou
 .crow__icon { width: 44px; height: 44px; flex-shrink: 0; display: grid; place-items: center; border-radius: 12px; background: linear-gradient(135deg, var(--blue), var(--blue-bright)); }
 .crow__icon svg { width: 20px; height: 20px; color: #fff; }
 .crow small { display: block; font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted-2); margin-bottom: 5px; }
-.crow strong { display: block; font-size: 1.02rem; font-family: 'Bricolage Grotesque'; }
+.crow strong { display: block; font-size: 1.02rem; font-family: 'Milker'; }
 .crow em { font-style: normal; font-size: 0.82rem; color: var(--muted); }
 
 .cform { background: var(--glass); border: 1px solid var(--line); border-radius: var(--r-md); padding: clamp(26px, 3vw, 42px); }
@@ -472,7 +488,7 @@ a.crow:hover { border-color: var(--orange); transform: translateX(4px); backgrou
 .timeline::before { content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: var(--line-2); }
 .tl-item { position: relative; padding: 0 0 34px 0; }
 .tl-item::before { content: ""; position: absolute; left: -28px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--orange); transform: translateX(-1px); box-shadow: 0 0 0 5px rgba(237,83,53,0.15); }
-.tl-item .yr { font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: 1.4rem; }
+.tl-item .yr { font-family: 'Milker'; font-weight: 700; font-size: 1.4rem; }
 .tl-item .yr b { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .tl-item p { color: var(--muted); margin-top: 6px; }
 
@@ -484,7 +500,7 @@ a.crow:hover { border-color: var(--orange); transform: translateX(4px); backgrou
 
 .leaders { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 .leader { display: flex; gap: 20px; align-items: center; padding: 24px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--panel); }
-.leader__av { width: 72px; height: 72px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center; font-family: 'Bricolage Grotesque'; font-weight: 700; font-size: 1.6rem; color: #fff; background: linear-gradient(135deg, var(--orange), var(--blue)); }
+.leader__av { width: 72px; height: 72px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center; font-family: 'Milker'; font-weight: 700; font-size: 1.6rem; color: #fff; background: linear-gradient(135deg, var(--orange), var(--blue)); }
 .leader h4 { font-size: 1.2rem; } .leader span { font-size: 0.85rem; color: var(--muted); }
 
 /* Map embed (contact page) */
