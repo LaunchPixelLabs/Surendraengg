@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8" />
-
+<script>try{if(sessionStorage.getItem('see_v'))document.documentElement.classList.add('preloaded');}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#080d10" />
 <title>Services — Fabrication, Electrical, Civil & O&M | Surendra Engineering Enterprises</title>
@@ -21,7 +21,108 @@
 </head>
 <body data-scroll-container>
 
+<div class="preloader" id="preloader" aria-hidden="true"><div class="preloader__inner"><div class="preloader__mark"><span class="grad">SEE</span></div><div class="preloader__bar"><span></span></div><div class="preloader__pct"><span id="preloaderPct">0</span>% — Loading</div></div></div>
+<canvas class="click-spark" id="clickSpark" aria-hidden="true"></canvas>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="index.html" class="nav__brand" aria-label="Home"><img src="assets/see-logo.png" alt="Surendra Engineering Enterprises" class="nav__logo" /></a>
+    <nav class="nav__menu" aria-label="Primary"><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></nav>
+    <div class="nav__right"><a href="contact.html" class="btn btn--orange nav__cta" data-magnetic><span><b>Start a Project</b><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button></div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true"><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a><a href="contact.html" class="mm-cta">Start a Project →</a></div>
+
+<main id="top">
+
+  <section class="page-hero">
+    <div class="page-hero__bg" aria-hidden="true"><img src="assets/img/supply-install.jpg" alt="" /><div class="page-hero__veil"></div></div>
+    <div class="container">
+      <div class="page-hero__crumb"><a href="index.html">Home</a> / <span>Services</span></div>
+      <h1 class="page-hero__title" data-anim="lines">Four disciplines.<br /><span class="grad">One accountable partner.</span></h1>
+      <p class="page-hero__lead" data-anim="fade">Fabrication, electrical, civil and O&amp;M — delivered in-house, under one contract, with owned machinery and certified crews. No accountability lost to sub-contractors.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="svc-detail" id="fabrication">
+        <div class="reveal-media svc-detail__media" data-anim="fade"><img class="reveal-media__img" src="assets/img/furnace-construction.jpg" alt="Steel fabrication and welding" /></div>
+        <div data-anim="fade">
+          <span class="svc-detail__no">01 — Fabrication</span>
+          <h3 data-anim="lines">Heavy steel<br /><span class="grad">fabrication.</span></h3>
+          <p>Customized fabrication of structural steel, industrial equipment and precision components — engineered, welded, machined and assembled to exact specification, in our shop or on your site.</p>
+          <ul class="svc-detail__list"><li>Structural steel &amp; platforms</li><li>Pipeline &amp; pressure systems</li><li>Welding, machining &amp; assembly</li><li>Zero-leakage discharge lines</li><li>On-site &amp; shop fabrication</li><li>QA/QC to ISO standards</li></ul>
+        </div>
+      </div>
+
+      <div class="svc-detail" id="electrical">
+        <div class="reveal-media svc-detail__media" data-anim="fade"><img class="reveal-media__img" src="assets/img/supply-install.jpg" alt="Industrial electrical systems" /></div>
+        <div data-anim="fade">
+          <span class="svc-detail__no">02 — Electrical Works</span>
+          <h3 data-anim="lines">Industrial<br /><span class="grad">electrification.</span></h3>
+          <p>Design, installation and maintenance of high-load industrial power systems — from distribution and cabling to automation and variable-frequency drives for safety-critical plants.</p>
+          <ul class="svc-detail__list"><li>Power distribution &amp; cabling</li><li>VFD installation &amp; modification</li><li>Automation &amp; control panels</li><li>Transformer installation</li><li>Lighting &amp; plant electrification</li><li>Preventive electrical maintenance</li></ul>
+        </div>
+      </div>
+
+      <div class="svc-detail" id="civil">
+        <div class="reveal-media svc-detail__media" data-anim="fade"><img class="reveal-media__img" src="assets/img/refractory.jpg" alt="Heavy civil construction" /></div>
+        <div data-anim="fade">
+          <span class="svc-detail__no">03 — Civil Construction</span>
+          <h3 data-anim="lines">Turnkey<br /><span class="grad">civil works.</span></h3>
+          <p>Plant buildings, roads, platforms, sheds and infrastructure delivered turnkey — backed by our own batching plants, transit mixers, concrete pumps and protective-coating teams.</p>
+          <ul class="svc-detail__list"><li>Industrial buildings &amp; sheds</li><li>Roads, platforms &amp; foundations</li><li>Plant road &amp; platform repairs</li><li>PU &amp; epoxy protective painting</li><li>Batching plants &amp; transit mixers</li><li>Renovation &amp; face-lifting</li></ul>
+        </div>
+      </div>
+
+      <div class="svc-detail" id="om">
+        <div class="reveal-media svc-detail__media" data-anim="fade"><img class="reveal-media__img" src="assets/img/hot-operations.jpg" alt="Plant operation and maintenance" /></div>
+        <div data-anim="fade">
+          <span class="svc-detail__no">04 — Operation &amp; Maintenance</span>
+          <h3 data-anim="lines">Keeping plants<br /><span class="grad">in production.</span></h3>
+          <p>Comprehensive O&amp;M for live industrial plants — POT room operational assistance, preventive &amp; shutdown maintenance, and large-scale manpower &amp; HEMM deployment with a zero-downtime focus.</p>
+          <ul class="svc-detail__list"><li>POT operations assistance</li><li>Preventive &amp; shutdown maintenance</li><li>Manpower supply (skilled &amp; unskilled)</li><li>HEMM &amp; heavy-equipment supply</li><li>Coal handling, rake unloading &amp; sampling</li><li>24×7 site operations on contract</li></ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="section panel-light">
+    <div class="container">
+      <div class="section__head"><span class="section__tag" data-anim="fade">How we deliver</span><h2 class="section__title" data-anim="lines">A method built<br /><span class="grad">for live plants.</span></h2></div>
+      <div class="sectors-grid" data-stagger>
+        <div class="sector" data-anim="fade"><div class="sector__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div><h3>01 · Assess</h3><p>Drawings, access, safety and timelines studied before a single crew mobilises.</p></div>
+        <div class="sector" data-anim="fade"><div class="sector__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v6c0 5-4 7-8 8-4-1-8-3-8-8V7l8-4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div><h3>02 · Plan</h3><p>Costed BOQ, manpower &amp; HEMM plan, and an HSE-first execution schedule.</p></div>
+        <div class="sector" data-anim="fade"><div class="sector__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12l4 4L21 4M3 20h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>03 · Execute</h3><p>Certified crews and owned machinery on the ground, supervised by site in-charges.</p></div>
+        <div class="sector" data-anim="fade"><div class="sector__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 10l7-7 7 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>04 · Sustain</h3><p>Preventive maintenance and rapid response keep production uninterrupted.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--stack">
+    <div class="container"><div class="cta-band" data-anim="scale"><h2 data-anim="lines">Have a scope<br /><span class="grad">in mind?</span></h2><p data-anim="fade">Whether it's a single fabrication job or a full plant O&amp;M contract, we'll scope it, cost it and mobilise.</p><a href="contact.html" class="btn btn--orange" data-magnetic><span><b>Discuss Your Scope</b><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand"><img src="assets/see-logo.png" alt="Surendra Engineering Enterprises" class="footer__logo" /><p class="footer__tag">Believe and see. — Engineering excellence and infrastructure that endures, since 1996.</p><div class="footer__badges"><img src="assets/badges/iso.svg" alt="ISO 9001 Certified" /><img src="assets/badges/msme.svg" alt="MSME Registered" /><img src="assets/badges/made-in-india.svg" alt="Make in India" /></div></div>
+      <div class="footer__col"><h4>Explore</h4><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></div>
+      <div class="footer__col"><h4>Divisions</h4><a href="services.html#fabrication">Fabrication</a><a href="services.html#electrical">Electrical Works</a><a href="services.html#civil">Civil Construction</a><a href="services.html#om">Operation &amp; Maintenance</a></div>
+      <div class="footer__col"><h4>Reach Us</h4><a href="tel:+917000323538">+91 7000 323 538</a><a href="mailto:surendra.engg@rediffmail.com">surendra.engg@rediffmail.com</a><span>Ring Road, Balco, Korba (C.G.) 495684</span><span>GSTIN: 22AABFE6229L1ZJ</span></div>
+    </div>
+    <div class="footer__bottom"><span>© <span id="year">2026</span> Surendra Engineering Enterprises. All rights reserved.</span><span class="footer__meta">UDYAM-CG-10-0000911 · A Partnership Firm · Director: Surendra Sharma</span></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
 <script src="js/main.js" defer></script>

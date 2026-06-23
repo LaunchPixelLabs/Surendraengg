@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8" />
-
+<script>try{if(sessionStorage.getItem('see_v'))document.documentElement.classList.add('preloaded');}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#080d10" />
 <title>Projects — Impact Stories | Surendra Engineering Enterprises</title>
@@ -21,7 +21,122 @@
 </head>
 <body data-scroll-container>
 
+<div class="preloader" id="preloader" aria-hidden="true"><div class="preloader__inner"><div class="preloader__mark"><span class="grad">SEE</span></div><div class="preloader__bar"><span></span></div><div class="preloader__pct"><span id="preloaderPct">0</span>% — Loading</div></div></div>
+<canvas class="click-spark" id="clickSpark" aria-hidden="true"></canvas>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="index.html" class="nav__brand" aria-label="Home"><img src="assets/see-logo.png" alt="Surendra Engineering Enterprises" class="nav__logo" /></a>
+    <nav class="nav__menu" aria-label="Primary"><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></nav>
+    <div class="nav__right"><a href="contact.html" class="btn btn--orange nav__cta" data-magnetic><span><b>Start a Project</b><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button></div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true"><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a><a href="contact.html" class="mm-cta">Start a Project →</a></div>
+
+<main id="top">
+
+  <section class="page-hero">
+    <div class="page-hero__bg" aria-hidden="true"><img src="assets/img/metals.jpg" alt="" /><div class="page-hero__veil"></div></div>
+    <div class="container">
+      <div class="page-hero__crumb"><a href="index.html">Home</a> / <span>Projects</span></div>
+      <h1 class="page-hero__title" data-anim="lines">Impact, measured in<br /><span class="grad">plants kept running.</span></h1>
+      <p class="page-hero__lead" data-anim="fade">A selection of engagements across aluminium, power and infrastructure — each one a reference for the next. Values reflect contract scale, not purchase-order minutiae.</p>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO STATS -->
+  <section class="section" style="padding-bottom:0">
+    <div class="container">
+      <div class="stats" data-stagger>
+        <div class="stat" data-anim="fade"><div class="stat__num"><span class="grad">₹<span data-count="60" data-suffix="Cr">0</span></span></div><div class="stat__label">Largest Engagement</div><p class="stat__desc">BALCO POT room operational assistance.</p></div>
+        <div class="stat" data-anim="fade"><div class="stat__num"><span class="grad" data-count="100" data-suffix="+">0</span></div><div class="stat__label">Projects Delivered</div><p class="stat__desc">Across fabrication, electrical, civil &amp; O&amp;M.</p></div>
+        <div class="stat" data-anim="fade"><div class="stat__num"><span class="grad" data-count="7" data-suffix="+">0</span></div><div class="stat__label">Marquee Clients</div><p class="stat__desc">Repeat work with India's industrial leaders.</p></div>
+        <div class="stat" data-anim="fade"><div class="stat__num"><span class="grad" data-count="3" data-suffix="">0</span></div><div class="stat__label">Core Sectors</div><p class="stat__desc">Metals, power &amp; infrastructure.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cases">
+
+        <article class="case" data-anim="fade" data-card>
+          <div class="case__media reveal-media"><img class="reveal-media__img" src="assets/img/who-we-are.jpg" alt="Aluminium pot room" loading="lazy" /></div>
+          <div class="case__info"><div class="case__client">BALCO · Bharat Aluminium</div><div class="case__value"><span class="grad">₹60 Cr</span></div><h3 class="case__name">POT Room Operational Assistance</h3><p class="case__desc">Operational assistance for the metal POT rooms — keeping one of India's largest aluminium smelters producing around the clock.</p><div class="case__tags"><span>O&amp;M</span><span>Ongoing 2024–27</span></div></div>
+        </article>
+
+        <article class="case case--rev" data-anim="fade" data-card>
+          <div class="case__media reveal-media"><img class="reveal-media__img" src="assets/img/metals.jpg" alt="Sheet rolling mill" loading="lazy" /></div>
+          <div class="case__info"><div class="case__client">BALCO · Bharat Aluminium</div><div class="case__value"><span class="grad">₹17 Cr</span></div><h3 class="case__name">Sheet Rolling Area — O&amp;M</h3><p class="case__desc">Full operation &amp; maintenance of the sheet rolling area with preventive programs engineered to minimise downtime.</p><div class="case__tags"><span>O&amp;M</span><span>Completed</span></div></div>
+        </article>
+
+        <article class="case" data-anim="fade" data-card>
+          <div class="case__media reveal-media"><img class="reveal-media__img" src="assets/img/demolition.jpg" alt="Ash dyke pre-monsoon works" loading="lazy" /></div>
+          <div class="case__info"><div class="case__client">BALCO · Bharat Aluminium</div><div class="case__value"><span class="grad">₹15 Cr</span></div><h3 class="case__name">Ash Dyke — Pre-Monsoon Works</h3><p class="case__desc">Manpower &amp; HEMM deployment ensuring clear movement and ash-handling readiness ahead of the monsoon.</p><div class="case__tags"><span>Manpower &amp; HEMM</span><span>Ongoing</span></div></div>
+        </article>
+
+        <article class="case case--rev" data-anim="fade" data-card>
+          <div class="case__media reveal-media"><img class="reveal-media__img" src="assets/img/furnace-demolition.jpg" alt="Plant road and platform repairs" loading="lazy" /></div>
+          <div class="case__info"><div class="case__client">BALCO · Bharat Aluminium</div><div class="case__value"><span class="grad">₹10 Cr</span></div><h3 class="case__name">Plant Road &amp; Platform Repairs</h3><p class="case__desc">Civil &amp; mechanical anti-reverse repairs across the entire plant road and platform network.</p><div class="case__tags"><span>Civil &amp; Mechanical</span><span>Completed</span></div></div>
+        </article>
+
+        <article class="case" data-anim="fade" data-card>
+          <div class="case__media reveal-media"><img class="reveal-media__img" src="assets/img/metal-structures.jpg" alt="Pipeline fabrication" loading="lazy" /></div>
+          <div class="case__info"><div class="case__client">BALCO · Bharat Aluminium</div><div class="case__value"><span class="grad">₹9.2 Cr</span></div><h3 class="case__name">Geho Discharge Line — Zero Leakage</h3><p class="case__desc">Fabrication of the Geho discharge pipeline engineered to a zero-leakage standard for ash handling.</p><div class="case__tags"><span>Fabrication</span><span>Completed</span></div></div>
+        </article>
+
+        <article class="case case--rev" data-anim="fade" data-card>
+          <div class="case__media reveal-media"><img class="reveal-media__img" src="assets/img/management.jpg" alt="Coal rake unloading" loading="lazy" /></div>
+          <div class="case__info"><div class="case__client">Thyssenkrupp &amp; SPSPL</div><div class="case__value"><span class="grad">₹11 Cr</span></div><h3 class="case__name">RAKE Unloading &amp; Coal Management</h3><p class="case__desc">Large-scale manpower and HEMM deployment for rake unloading, coal yard maintenance and sampling.</p><div class="case__tags"><span>Manpower &amp; HEMM</span><span>Completed</span></div></div>
+        </article>
+
+        <article class="case" data-anim="fade" data-card>
+          <div class="case__media reveal-media"><img class="reveal-media__img" src="assets/img/hot-operations.jpg" alt="Vedanta plant O&M" loading="lazy" /></div>
+          <div class="case__info"><div class="case__client">Vedanta · Jharsuguda &amp; Lanjigarh</div><div class="case__value"><span class="grad">POT O&amp;M</span></div><h3 class="case__name">Continuous Plant O&amp;M</h3><p class="case__desc">Comprehensive O&amp;M and preventive-maintenance programs ensuring continuous operation of equipment and facilities.</p><div class="case__tags"><span>O&amp;M</span><span>Multi-site</span></div></div>
+        </article>
+
+        <article class="case case--rev" data-anim="fade" data-card>
+          <div class="case__media reveal-media"><img class="reveal-media__img" src="assets/img/supply-install.jpg" alt="VFD panel installation" loading="lazy" /></div>
+          <div class="case__info"><div class="case__client">NGSL &amp; L&amp;T</div><div class="case__value"><span class="grad">Precision</span></div><h3 class="case__name">VFD Installation &amp; Pre-cast Supply</h3><p class="case__desc">VFD panel installation &amp; modification for NGSL, plus casting and supply of road-divider blocks for L&amp;T.</p><div class="case__tags"><span>Electrical · Civil</span><span>Completed</span></div></div>
+        </article>
+
+        <article class="case" data-anim="fade" data-card>
+          <div class="case__media reveal-media"><img class="reveal-media__img" src="assets/img/chemical.jpg" alt="Adani civil works" loading="lazy" /></div>
+          <div class="case__info"><div class="case__client">Adani Group</div><div class="case__value"><span class="grad">Civil</span></div><h3 class="case__name">Storage, Sheds &amp; Modifications</h3><p class="case__desc">Chemical storage rooms, semi-closed oil sheds, cooling-tower &amp; gate modifications and face-lifting works.</p><div class="case__tags"><span>Civil</span><span>Completed</span></div></div>
+        </article>
+
+      </div>
+
+      <div style="margin-top:60px" data-anim="fade">
+        <div class="clients__label" style="margin-bottom:28px">A track record across India's industrial leaders</div>
+        <div class="marquee"><div class="marquee__track">
+          <div class="marquee__group"><span class="marquee__chip"><img src="assets/logos/balco.png" alt="BALCO" /></span><span class="marquee__chip"><img src="assets/logos/vedanta.png" alt="Vedanta" /></span><span class="marquee__chip"><img src="assets/logos/adani.svg" alt="Adani" /></span><span class="marquee__chip"><img src="assets/logos/thyssenkrupp.svg" alt="thyssenkrupp" /></span><span class="marquee__chip"><img src="assets/logos/ngsl.svg" alt="NGSL" /></span><span class="marquee__chip"><img src="assets/logos/lt.svg" alt="L&amp;T" /></span><span class="marquee__chip"><img src="assets/logos/spspl.svg" alt="SPSPL" /></span><span class="marquee__chip"><img src="assets/logos/iso.png" alt="ISO 9001" /></span><span class="marquee__chip"><img src="assets/logos/msme.png" alt="MSME" /></span></div>
+          <div class="marquee__group" aria-hidden="true"><span class="marquee__chip"><img src="assets/logos/balco.png" alt="" /></span><span class="marquee__chip"><img src="assets/logos/vedanta.png" alt="" /></span><span class="marquee__chip"><img src="assets/logos/adani.svg" alt="" /></span><span class="marquee__chip"><img src="assets/logos/thyssenkrupp.svg" alt="" /></span><span class="marquee__chip"><img src="assets/logos/ngsl.svg" alt="" /></span><span class="marquee__chip"><img src="assets/logos/lt.svg" alt="" /></span><span class="marquee__chip"><img src="assets/logos/spspl.svg" alt="" /></span><span class="marquee__chip"><img src="assets/logos/iso.png" alt="" /></span><span class="marquee__chip"><img src="assets/logos/msme.png" alt="" /></span></div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--stack">
+    <div class="container"><div class="cta-band" data-anim="scale"><h2 data-anim="lines">Your project could be<br /><span class="grad">the next reference.</span></h2><p data-anim="fade">Tell us the scope. We'll bring three decades of plant-floor execution to bear on it.</p><a href="contact.html" class="btn btn--orange" data-magnetic><span><b>Start a Project</b><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand"><img src="assets/see-logo.png" alt="Surendra Engineering Enterprises" class="footer__logo" /><p class="footer__tag">Believe and see. — Engineering excellence and infrastructure that endures, since 1996.</p><div class="footer__badges"><img src="assets/badges/iso.svg" alt="ISO 9001 Certified" /><img src="assets/badges/msme.svg" alt="MSME Registered" /><img src="assets/badges/made-in-india.svg" alt="Make in India" /></div></div>
+      <div class="footer__col"><h4>Explore</h4><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></div>
+      <div class="footer__col"><h4>Divisions</h4><a href="services.html#fabrication">Fabrication</a><a href="services.html#electrical">Electrical Works</a><a href="services.html#civil">Civil Construction</a><a href="services.html#om">Operation &amp; Maintenance</a></div>
+      <div class="footer__col"><h4>Reach Us</h4><a href="tel:+917000323538">+91 7000 323 538</a><a href="mailto:surendra.engg@rediffmail.com">surendra.engg@rediffmail.com</a><span>Ring Road, Balco, Korba (C.G.) 495684</span><span>GSTIN: 22AABFE6229L1ZJ</span></div>
+    </div>
+    <div class="footer__bottom"><span>© <span id="year">2026</span> Surendra Engineering Enterprises. All rights reserved.</span><span class="footer__meta">UDYAM-CG-10-0000911 · A Partnership Firm · Director: Surendra Sharma</span></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
 <script src="js/main.js" defer></script>

@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8" />
-
+<script>try{if(sessionStorage.getItem('see_v'))document.documentElement.classList.add('preloaded');}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#080d10" />
 <title>Surendra Engineering Enterprises — Engineering Excellence. Infrastructure That Endures.</title>
@@ -40,7 +40,287 @@
 </head>
 <body data-scroll-container>
 
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__inner">
+    <div class="preloader__mark"><span class="grad">SEE</span></div>
+    <div class="preloader__bar"><span></span></div>
+    <div class="preloader__pct"><span id="preloaderPct">0</span>% — Loading</div>
+  </div>
+</div>
+<canvas class="click-spark" id="clickSpark" aria-hidden="true"></canvas>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="index.html" class="nav__brand" aria-label="Surendra Engineering Enterprises home"><img src="assets/see-logo.png" alt="Surendra Engineering Enterprises" class="nav__logo" /></a>
+    <nav class="nav__menu" aria-label="Primary">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav__right">
+      <a href="contact.html" class="btn btn--orange nav__cta" data-magnetic><span><b>Start a Project</b><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="mm-cta">Start a Project →</a>
+</div>
+
+<main id="top">
+
+  <!-- 1 · HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <img src="assets/img/chimney-epc.jpg" alt="" loading="eager" />
+      <div class="hero__blueprint" style="background-image:url('assets/blueprint.svg')"></div>
+      <div class="hero__veil"></div>
+    </div>
+    <div class="container">
+      <div class="eyebrow hero__eyebrow"><span class="dot"></span> EST. 1996 · KORBA, CHHATTISGARH · ISO &amp; MSME CERTIFIED</div>
+      <h1 class="hero__title" data-anim="lines">We convert ideas<br />into <em>reality.</em></h1>
+      <p class="hero__sub">For three decades, Surendra Engineering Enterprises has built, powered and maintained the heavy industry that drives India — fabrication, electrical, civil and O&amp;M delivered at the scale of a 1500-strong workforce.</p>
+      <div class="hero__actions">
+        <a href="projects.html" class="btn btn--orange" data-magnetic><span><b>Explore Our Impact</b><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a href="contact.html" class="btn btn--light" data-magnetic><span><b>Talk to Engineering</b></span></a>
+      </div>
+      <div class="hero__ticker">
+        <div class="ti"><b>₹60 Cr</b><span>POT Operations · BALCO</span></div>
+        <div class="ti"><b>1500+</b><span>Skilled Workforce</span></div>
+        <div class="ti"><b>30+ Yrs</b><span>Nation Building</span></div>
+        <div class="ti"><b>Zero</b><span>Compromise on Safety</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · CLIENTS MARQUEE -->
+  <section class="clients" id="clients" aria-label="Trusted by industry leaders">
+    <div class="clients__label" data-anim="fade">Trusted by the enterprises that power India</div>
+    <div class="marquee">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span class="marquee__chip"><img src="assets/logos/balco.png" alt="BALCO" /></span>
+          <span class="marquee__chip"><img src="assets/logos/vedanta.png" alt="Vedanta" /></span>
+          <span class="marquee__chip"><img src="assets/logos/adani.svg" alt="Adani" /></span>
+          <span class="marquee__chip"><img src="assets/logos/thyssenkrupp.svg" alt="thyssenkrupp" /></span>
+          <span class="marquee__chip"><img src="assets/logos/ngsl.svg" alt="NGSL" /></span>
+          <span class="marquee__chip"><img src="assets/logos/lt.svg" alt="Larsen &amp; Toubro" /></span>
+          <span class="marquee__chip"><img src="assets/logos/spspl.svg" alt="SPSPL" /></span>
+          <span class="marquee__chip"><img src="assets/logos/iso.png" alt="ISO 9001 Certified" /></span>
+          <span class="marquee__chip"><img src="assets/logos/msme.png" alt="MSME Registered" /></span>
+        </div>
+        <div class="marquee__group" aria-hidden="true">
+          <span class="marquee__chip"><img src="assets/logos/balco.png" alt="" /></span>
+          <span class="marquee__chip"><img src="assets/logos/vedanta.png" alt="" /></span>
+          <span class="marquee__chip"><img src="assets/logos/adani.svg" alt="" /></span>
+          <span class="marquee__chip"><img src="assets/logos/thyssenkrupp.svg" alt="" /></span>
+          <span class="marquee__chip"><img src="assets/logos/ngsl.svg" alt="" /></span>
+          <span class="marquee__chip"><img src="assets/logos/lt.svg" alt="" /></span>
+          <span class="marquee__chip"><img src="assets/logos/spspl.svg" alt="" /></span>
+          <span class="marquee__chip"><img src="assets/logos/iso.png" alt="" /></span>
+          <span class="marquee__chip"><img src="assets/logos/msme.png" alt="" /></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · IMPACT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__tag" data-anim="fade">01 — The SEE Impact</span>
+        <h2 class="section__title" data-anim="lines">Built like an enterprise.<br /><span class="grad">Run like a promise.</span></h2>
+        <p class="section__lead" data-anim="fade">Since 1996, Surendra Engineering Enterprises has grown from a Korba-based contractor into a full-spectrum industrial partner — executing multi-crore operations for the largest aluminium, power and infrastructure names in India.</p>
+      </div>
+      <div class="stats" data-stagger>
+        <div class="stat" data-anim="fade"><div class="stat__num"><span class="grad" data-count="1500" data-suffix="+">0</span></div><div class="stat__label">Skilled Workforce</div><p class="stat__desc">Engineers, technicians, safety officers &amp; site teams deployed across India.</p></div>
+        <div class="stat" data-anim="fade"><div class="stat__num"><span class="grad" data-count="30" data-suffix="+">0</span></div><div class="stat__label">Years of Engineering</div><p class="stat__desc">Three decades of fabrication, power and civil execution since 1996.</p></div>
+        <div class="stat" data-anim="fade"><div class="stat__num"><span class="grad">₹<span data-count="50" data-suffix="Cr+">0</span></span></div><div class="stat__label">Annual Turnover</div><p class="stat__desc">Sustained 5× growth — from ₹10.7 Cr to a ₹50 Cr+ trajectory.</p></div>
+        <div class="stat" data-anim="fade"><div class="stat__num"><span class="grad" data-count="7" data-suffix="+">0</span></div><div class="stat__label">Marquee Clients</div><p class="stat__desc">BALCO, Vedanta, Adani, Thyssenkrupp, NGSL, L&amp;T &amp; SPSPL.</p></div>
+      </div>
+      <div class="certs" data-stagger>
+        <div class="cert-chip" data-anim="fade"><img src="assets/badges/iso.svg" alt="ISO 9001" /><div><strong>ISO 9001 Certified</strong><span>Audited quality management systems</span></div></div>
+        <div class="cert-chip" data-anim="fade"><img src="assets/badges/msme.svg" alt="MSME" /><div><strong>MSME Registered</strong><span>UDYAM-CG-10-0000911 · Govt. of India</span></div></div>
+        <div class="cert-chip" data-anim="fade"><img src="assets/badges/made-in-india.svg" alt="Make in India" /><div><strong>Make in India</strong><span>Powering domestic heavy industry</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · DIVISIONS (scroll stack) -->
+  <section class="section scroll-stack" id="divisions">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__tag" data-anim="fade">02 — Core Engineering Divisions</span>
+        <h2 class="section__title" data-anim="lines">Four disciplines.<br /><span class="grad">One accountable partner.</span></h2>
+        <p class="section__lead" data-anim="fade">Delivered in-house under one contract — scroll through the stack to see how each division compounds into a single accountable partner.</p>
+      </div>
+      <div class="stack" data-scroll-stack>
+
+        <article class="stack-card">
+          <div class="stack-card__body">
+            <span class="stack-card__no">01 — Fabrication</span>
+            <h3>Fabrication</h3>
+            <p>Customized fabrication of heavy steel structures, industrial equipment and precision components — welding, machining and assembly executed to spec.</p>
+            <ul class="stack-card__list"><li>Structural steel &amp; platforms</li><li>Pipeline &amp; pressure systems</li><li>On-site &amp; shop fabrication</li></ul>
+            <a href="services.html#fabrication" class="btn-simple stack-card__cta"><span>Explore fabrication</span><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+          <div class="stack-card__media"><img src="assets/img/furnace-construction.jpg" alt="Steel fabrication and welding" loading="lazy" /></div>
+        </article>
+
+        <article class="stack-card">
+          <div class="stack-card__body">
+            <span class="stack-card__no">02 — Electrical</span>
+            <h3>Electrical Works</h3>
+            <p>Design, installation and maintenance of industrial power systems — distribution, automation, VFD panels and high-load plant electrification.</p>
+            <ul class="stack-card__list"><li>Power distribution &amp; cabling</li><li>VFD &amp; automation panels</li><li>Transformer installation</li></ul>
+            <a href="services.html#electrical" class="btn-simple stack-card__cta"><span>Explore electrical</span><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+          <div class="stack-card__media"><img src="assets/img/supply-install.jpg" alt="Industrial electrical control panel" loading="lazy" /></div>
+        </article>
+
+        <article class="stack-card">
+          <div class="stack-card__body">
+            <span class="stack-card__no">03 — Civil</span>
+            <h3>Civil Construction</h3>
+            <p>Turnkey civil works — plant buildings, roads, platforms, sheds and infrastructure — delivered with our own batching plants, transit mixers and concrete pumps.</p>
+            <ul class="stack-card__list"><li>Industrial buildings &amp; sheds</li><li>Roads, platforms &amp; foundations</li><li>PU / epoxy protective works</li></ul>
+            <a href="services.html#civil" class="btn-simple stack-card__cta"><span>Explore civil</span><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+          <div class="stack-card__media"><img src="assets/img/refractory.jpg" alt="Heavy civil construction site" loading="lazy" /></div>
+        </article>
+
+        <article class="stack-card">
+          <div class="stack-card__body">
+            <span class="stack-card__no">04 — O&amp;M</span>
+            <h3>Operation &amp; Maintenance</h3>
+            <p>Comprehensive O&amp;M for live industrial plants — POT room operations, preventive maintenance, and manpower &amp; HEMM supply with a zero-downtime focus.</p>
+            <ul class="stack-card__list"><li>POT operations assistance</li><li>Preventive &amp; shutdown maintenance</li><li>Manpower &amp; HEMM deployment</li></ul>
+            <a href="services.html#om" class="btn-simple stack-card__cta"><span>Explore O&amp;M</span><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+          <div class="stack-card__media"><img src="assets/img/hot-operations.jpg" alt="Plant operation and maintenance crew" loading="lazy" /></div>
+        </article>
+
+        <div class="scroll-stack-end"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · PROJECT IMPACT STORIES (teaser) -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__tag" data-anim="fade">03 — Project Impact Stories</span>
+        <h2 class="section__title" data-anim="lines">Scale you can <span class="grad">stand on.</span></h2>
+        <p class="section__lead" data-anim="fade">Selected engagements across aluminium, power and infrastructure — measured not in purchase orders, but in plants kept running and infrastructure that endures.</p>
+      </div>
+      <div class="cases">
+        <article class="case" data-anim="fade" data-card>
+          <div class="case__media reveal-media"><img class="reveal-media__img" src="assets/img/who-we-are.jpg" alt="Aluminium pot room operations" loading="lazy" /></div>
+          <div class="case__info"><div class="case__client">BALCO · Bharat Aluminium</div><div class="case__value"><span class="grad">₹60 Cr</span></div><h3 class="case__name">POT Room Operational Assistance</h3><p class="case__desc">End-to-end operational assistance for BALCO's metal POT rooms — keeping one of India's largest aluminium smelters producing around the clock.</p><div class="case__tags"><span>O&amp;M</span><span>Metal · Ongoing 2024–27</span></div></div>
+        </article>
+        <article class="case case--rev" data-anim="fade" data-card>
+          <div class="case__media reveal-media"><img class="reveal-media__img" src="assets/img/metals.jpg" alt="Sheet rolling mill maintenance" loading="lazy" /></div>
+          <div class="case__info"><div class="case__client">BALCO · Bharat Aluminium</div><div class="case__value"><span class="grad">₹17 Cr</span></div><h3 class="case__name">Sheet Rolling Area — O&amp;M</h3><p class="case__desc">Full operation &amp; maintenance of BALCO's sheet rolling area, with preventive programs engineered to minimise downtime and protect throughput.</p><div class="case__tags"><span>O&amp;M</span><span>Completed</span></div></div>
+        </article>
+        <article class="case" data-anim="fade" data-card>
+          <div class="case__media reveal-media"><img class="reveal-media__img" src="assets/img/furnace-demolition.jpg" alt="Plant road and platform civil works" loading="lazy" /></div>
+          <div class="case__info"><div class="case__client">BALCO · Bharat Aluminium</div><div class="case__value"><span class="grad">₹10 Cr</span></div><h3 class="case__name">Entire Plant Road &amp; Platform Repairs</h3><p class="case__desc">Civil &amp; mechanical anti-reverse repairs across the entire plant road and platform network — restoring safe, continuous movement plant-wide.</p><div class="case__tags"><span>Civil &amp; Mechanical</span><span>Completed</span></div></div>
+        </article>
+      </div>
+      <div style="margin-top:48px" data-anim="fade"><a href="projects.html" class="btn btn--light" data-magnetic><span><b>View All Projects</b><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+    </div>
+  </section>
+
+  <!-- 6 · INDUSTRY FOOTPRINT -->
+  <section class="section panel-light" id="sectors">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__tag" data-anim="fade">04 — Industry Footprint</span>
+        <h2 class="section__title" data-anim="lines">Where we operate.</h2>
+      </div>
+      <div class="sectors-grid" data-stagger>
+        <div class="sector" data-anim="fade" data-card><div class="sector__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zM12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div><h3>Metals &amp; Aluminium</h3><p>Smelter POT rooms, rolling areas and metal handling for BALCO &amp; Vedanta.</p></div>
+        <div class="sector" data-anim="fade" data-card><div class="sector__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div><h3>Power &amp; Energy</h3><p>Coal management, electrical systems and plant O&amp;M for thermal &amp; nuclear-grade clients.</p></div>
+        <div class="sector" data-anim="fade" data-card><div class="sector__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21V9l6 3V9l6 3V5l6 3v13H3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div><h3>Manufacturing</h3><p>Fabrication, equipment and maintenance for refineries and process plants.</p></div>
+        <div class="sector" data-anim="fade" data-card><div class="sector__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-5h4v5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div><h3>Infrastructure</h3><p>Roads, buildings, ports &amp; logistics for Adani and L&amp;T-scale programs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · CAPABILITIES -->
+  <section class="section" id="capabilities">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__tag" data-anim="fade">05 — Capabilities &amp; Fleet</span>
+        <h2 class="section__title" data-anim="lines">The resources behind <span class="grad">the results.</span></h2>
+      </div>
+      <div class="cap-grid">
+        <div class="cap-col" data-anim="fade">
+          <h3 class="cap-col__title"><i></i>Human Resources</h3>
+          <ul class="cap-stats">
+            <li><b data-count="1500">0</b><span>Working Employees</span></li><li><b data-count="15">0</b><span>Safety Officers</span></li>
+            <li><b data-count="10">0</b><span>Engineers</span></li><li><b data-count="12">0</b><span>Site In-charge</span></li>
+            <li><b data-count="9">0</b><span>HRM Professionals</span></li><li><b data-count="4">0</b><span>Project Managers</span></li>
+          </ul>
+        </div>
+        <div class="cap-col" data-anim="fade">
+          <h3 class="cap-col__title"><i></i>Heavy Machinery &amp; Fleet</h3>
+          <ul class="cap-fleet">
+            <li><b>26</b> HYWA Tippers</li><li><b>25</b> Trailers</li><li><b>05</b> Pocklain Excavators</li><li><b>05</b> Hydra Cranes</li>
+            <li><b>03</b> JCB Excavators</li><li><b>05</b> Transit Mixers</li><li><b>02</b> Batching Plants</li><li><b>03</b> Automatic Mixers</li>
+            <li><b>02</b> Concrete Pumps</li><li><b>02</b> DG Sets · 110 kV</li><li><b>13 MT</b> Scaffolding</li><li><b>10</b> Diesel Pump Sets</li>
+          </ul>
+        </div>
+        <div class="cap-col" data-anim="fade">
+          <h3 class="cap-col__title"><i></i>Safety &amp; Assurance</h3>
+          <p class="cap-lead">A dedicated 15-strong safety cadre, ISO-audited quality systems and stringent on-site protocols protect every deployment.</p>
+          <ul class="cap-check"><li>Working-at-height &amp; confined-space protocols</li><li>Preventive maintenance &amp; inspection regimes</li><li>Statutory compliance — EPF, ESIC, GST, UDYAM</li><li>Client-embedded HSE reporting</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · CTA BAND -->
+  <section class="section section--stack" id="cta">
+    <div class="container">
+      <div class="cta-band" data-anim="scale">
+        <span class="section__tag" data-anim="fade">06 — Start a Project</span>
+        <h2 data-anim="lines">Let's engineer<br /><span class="grad">what endures.</span></h2>
+        <p data-anim="fade">Procurement managers and plant heads: bring us your toughest fabrication, electrical, civil or O&amp;M scope — and get scale, certifications and a verifiable track record in reply.</p>
+        <a href="contact.html" class="btn btn--orange" data-magnetic><span><b>Talk to Engineering</b><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="assets/see-logo.png" alt="Surendra Engineering Enterprises" class="footer__logo" />
+        <p class="footer__tag">Believe and see. — Engineering excellence and infrastructure that endures, since 1996.</p>
+        <div class="footer__badges"><img src="assets/badges/iso.svg" alt="ISO 9001 Certified" /><img src="assets/badges/msme.svg" alt="MSME Registered" /><img src="assets/badges/made-in-india.svg" alt="Make in India" /></div>
+      </div>
+      <div class="footer__col"><h4>Explore</h4><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></div>
+      <div class="footer__col"><h4>Divisions</h4><a href="services.html#fabrication">Fabrication</a><a href="services.html#electrical">Electrical Works</a><a href="services.html#civil">Civil Construction</a><a href="services.html#om">Operation &amp; Maintenance</a></div>
+      <div class="footer__col"><h4>Reach Us</h4><a href="tel:+917000323538">+91 7000 323 538</a><a href="mailto:surendra.engg@rediffmail.com">surendra.engg@rediffmail.com</a><span>Ring Road, Balco, Korba (C.G.) 495684</span><span>GSTIN: 22AABFE6229L1ZJ</span></div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span> Surendra Engineering Enterprises. All rights reserved.</span>
+      <span class="footer__meta">UDYAM-CG-10-0000911 · A Partnership Firm · Director: Surendra Sharma</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
 <script src="js/main.js" defer></script>

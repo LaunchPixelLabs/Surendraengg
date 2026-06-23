@@ -49,14 +49,12 @@
      1 · HERO INTRO TRIGGER
      ========================================================= */
   let introStarted = false;
-  window.addEventListener('load', () => {
-    document.body.style.overflow = '';
+  document.body.style.overflow = '';
+  // Trigger animations immediately (defer script means DOM is parsed)
+  // RequestAnimationFrame ensures browser has painted the initial state
+  requestAnimationFrame(() => {
     startHeroIntro();
   });
-  if (document.readyState === 'complete') {
-    document.body.style.overflow = '';
-    startHeroIntro();
-  }
 
   /* =========================================================
      2 · LENIS SMOOTH SCROLL  (+ ScrollTrigger sync)

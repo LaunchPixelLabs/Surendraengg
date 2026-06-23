@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8" />
-
+<script>try{if(sessionStorage.getItem('see_v'))document.documentElement.classList.add('preloaded');}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#080d10" />
 <title>Contact — Surendra Engineering Enterprises | Korba, Chhattisgarh</title>
@@ -31,7 +31,103 @@
 </head>
 <body data-scroll-container>
 
+<div class="preloader" id="preloader" aria-hidden="true"><div class="preloader__inner"><div class="preloader__mark"><span class="grad">SEE</span></div><div class="preloader__bar"><span></span></div><div class="preloader__pct"><span id="preloaderPct">0</span>% — Loading</div></div></div>
+<canvas class="click-spark" id="clickSpark" aria-hidden="true"></canvas>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="index.html" class="nav__brand" aria-label="Home"><img src="assets/see-logo.png" alt="Surendra Engineering Enterprises" class="nav__logo" /></a>
+    <nav class="nav__menu" aria-label="Primary"><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></nav>
+    <div class="nav__right">
+      <a href="tel:+917000323538" class="btn btn--orange nav__cta" data-magnetic><span><b>Call Now</b><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span></a>
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true"><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a><a href="tel:+917000323538" class="mm-cta">Call +91 7000 323 538 →</a></div>
+
+<main id="top">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__bg" aria-hidden="true"><img src="assets/img/contacts-banner.jpg" alt="" /><div class="page-hero__veil"></div></div>
+    <div class="container">
+      <div class="page-hero__crumb"><a href="index.html">Home</a> / <span>Contact</span></div>
+      <h1 class="page-hero__title" data-anim="lines">Let's engineer<br /><span class="grad">what endures.</span></h1>
+      <p class="page-hero__lead" data-anim="fade">Bring us your toughest fabrication, electrical, civil or O&amp;M scope. You'll reach engineers — not a call centre — and get a response within one business day.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__left" data-anim="fade">
+          <span class="section__tag">Direct lines</span>
+          <h2 class="contact__title" data-anim="lines">Reach the<br /><span class="grad">right desk.</span></h2>
+          <p class="contact__lead">Korba HQ handles enquiries across India. For active site emergencies, call the primary line directly — it's monitored around operations.</p>
+          <div class="contact__details">
+            <a href="tel:+917000323538" class="crow" data-magnetic><span class="crow__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><div><small>Call Engineering</small><strong>+91 7000 323 538</strong><em>+91 91790 98681 · +91 99811 61965</em></div></a>
+            <a href="https://wa.me/917000323538" class="crow" data-magnetic target="_blank" rel="noopener"><span class="crow__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21l1.6-5A8 8 0 1112 20a8 8 0 01-4.2-1.2L3 21z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><div><small>WhatsApp</small><strong>Chat with us instantly</strong><em>Share drawings, RFQs &amp; site photos</em></div></a>
+            <a href="mailto:surendra.engg@rediffmail.com" class="crow" data-magnetic><span class="crow__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span><div><small>Email Us</small><strong>surendra.engg@rediffmail.com</strong></div></a>
+            <div class="crow"><span class="crow__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.4 7-11a7 7 0 10-14 0c0 4.6 7 11 7 11z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.7"/></svg></span><div><small>Registered &amp; Branch Office</small><strong>Ring Road, Near HP Petrol Pump, Balco</strong><em>Korba, Chhattisgarh — 495684, India</em></div></div>
+            <div class="crow"><span class="crow__icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><div><small>Working Hours</small><strong>Mon – Sat · 9:00 AM – 7:00 PM</strong><em>Site operations: 24×7 on contract</em></div></div>
+          </div>
+        </div>
+
+        <form class="cform" data-anim="fade" id="contactForm" novalidate>
+          <div class="field"><input type="text" id="cf-name" name="name" required placeholder=" " /><label for="cf-name">Full name</label></div>
+          <div class="field"><input type="text" id="cf-company" name="company" placeholder=" " /><label for="cf-company">Company / Organisation</label></div>
+          <div class="field"><input type="email" id="cf-email" name="email" required placeholder=" " /><label for="cf-email">Work email</label></div>
+          <div class="field"><input type="tel" id="cf-phone" name="phone" placeholder=" " /><label for="cf-phone">Phone (optional)</label></div>
+          <div class="field"><select id="cf-scope" name="scope" required><option value="" disabled selected></option><option>Fabrication</option><option>Electrical Works</option><option>Civil Construction</option><option>Operation &amp; Maintenance</option><option>Manpower &amp; HEMM Supply</option><option>Other / Multiple</option></select><label for="cf-scope" class="static">Scope of work</label></div>
+          <div class="field"><textarea id="cf-msg" name="message" rows="3" placeholder=" "></textarea><label for="cf-msg">Tell us about your project</label></div>
+          <button type="submit" class="btn btn--orange btn--block" data-magnetic><span><b>Send Enquiry</b><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+          <p class="cform__note" id="formNote" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP + PROMISE -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="split-2">
+        <div class="reveal-media map-embed" data-anim="fade">
+          <iframe title="Surendra Engineering Enterprises — Korba" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=82.65%2C22.30%2C82.80%2C22.42&amp;layer=mapnik&amp;marker=22.36%2C82.72"></iframe>
+        </div>
+        <div data-anim="fade">
+          <span class="section__tag">What happens next</span>
+          <h2 class="section__title" data-anim="lines" style="font-size:clamp(1.8rem,3.6vw,3rem)">From enquiry<br /><span class="grad">to mobilisation.</span></h2>
+          <ul class="cap-check" style="margin-top:24px">
+            <li><strong>Within 24 hrs</strong> — an engineer reviews your scope and replies with clarifying questions.</li>
+            <li><strong>Site &amp; spec study</strong> — we assess drawings, access, safety and timelines.</li>
+            <li><strong>Costed proposal</strong> — transparent BOQ, manpower &amp; HEMM plan, and schedule.</li>
+            <li><strong>Mobilisation</strong> — certified crews, machinery and HSE protocols on the ground.</li>
+          </ul>
+          <div style="margin-top:30px"><a href="about.html" class="btn-simple"><span>Why teams choose SEE</span><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand"><img src="assets/see-logo.png" alt="Surendra Engineering Enterprises" class="footer__logo" /><p class="footer__tag">Believe and see. — Engineering excellence and infrastructure that endures, since 1996.</p><div class="footer__badges"><img src="assets/badges/iso.svg" alt="ISO 9001 Certified" /><img src="assets/badges/msme.svg" alt="MSME Registered" /><img src="assets/badges/made-in-india.svg" alt="Make in India" /></div></div>
+      <div class="footer__col"><h4>Explore</h4><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></div>
+      <div class="footer__col"><h4>Divisions</h4><a href="services.html#fabrication">Fabrication</a><a href="services.html#electrical">Electrical Works</a><a href="services.html#civil">Civil Construction</a><a href="services.html#om">Operation &amp; Maintenance</a></div>
+      <div class="footer__col"><h4>Reach Us</h4><a href="tel:+917000323538">+91 7000 323 538</a><a href="mailto:surendra.engg@rediffmail.com">surendra.engg@rediffmail.com</a><span>Ring Road, Balco, Korba (C.G.) 495684</span><span>GSTIN: 22AABFE6229L1ZJ</span></div>
+    </div>
+    <div class="footer__bottom"><span>© <span id="year">2026</span> Surendra Engineering Enterprises. All rights reserved.</span><span class="footer__meta">UDYAM-CG-10-0000911 · A Partnership Firm · Director: Surendra Sharma</span></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
 <script src="js/main.js" defer></script>
