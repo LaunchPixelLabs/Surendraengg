@@ -388,6 +388,9 @@ a.crow:hover { border-color: var(--orange); transform: translateX(4px); backgrou
 .footer__col a, .footer__col span { display: block; color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; transition: color .3s; }
 .footer__col a:hover { color: #fff; }
 .footer__bottom { padding-top: 26px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; color: var(--muted-2); }
+.footer__credit { flex-basis: 100%; text-align: center; padding-top: 12px; }
+.footer__credit a { color: inherit; text-decoration: none; transition: color .3s; }
+.footer__credit a:hover { color: var(--orange); }
 
 /* ============================================================
    MOTION SYSTEM  (modeled on phenomenonstudio.com)
