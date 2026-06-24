@@ -235,9 +235,15 @@
     const endEl = root.querySelector('.scroll-stack-end');
     const cfg = { itemDistance: 110, itemScale: 0.022, itemStackDistance: 24, stackPos: 0.16, scaleEndPos: 0.08, baseScale: 0.88 };
     let tops = [], endTop = 0;
+    // The pinned-stack effect is a large-screen scroll interaction. On phones/tablets
+    // it caused cards to overlap the following section, so below this width the cards
+    // fall back to a clean vertical list (CSS handles the single-column layout).
+    const enabled = () => window.matchMedia('(min-width: 861px)').matches;
     const docTop = (el) => { let t = 0; while (el) { t += el.offsetTop; el = el.offsetParent; } return t; };
     const clamp = (s, a, b) => (s < a ? 0 : s > b ? 1 : (s - a) / (b - a));
+    function clearTransforms() { cards.forEach((c) => { c.style.transform = ''; c.style.marginBottom = ''; c.style.willChange = ''; }); }
     function measure() {
+      if (!enabled()) { clearTransforms(); return; }
       cards.forEach((c, i) => { c.style.willChange = 'transform'; if (i < cards.length - 1) c.style.marginBottom = cfg.itemDistance + 'px'; });
       tops = cards.map(docTop);
       endTop = endEl ? docTop(endEl) : tops[tops.length - 1] + cards[cards.length - 1].offsetHeight;
@@ -248,6 +254,7 @@
       ? lenis.animatedScroll
       : (window.scrollY || window.pageYOffset || 0);
     function apply(scrollTop) {
+      if (!enabled()) { clearTransforms(); return; }
       const vh = window.innerHeight;
       const stackPx = cfg.stackPos * vh;
       const scaleEndPx = cfg.scaleEndPos * vh;
