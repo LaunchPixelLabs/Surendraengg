@@ -79,7 +79,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .scroll-stack .stack-card { animation: none !important; } }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-stopped { overflow: hidden; }
@@ -89,7 +89,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   line-height: 1.5;
-  overflow-x: hidden;
+  overflow-x: clip;          /* clip (not hidden) so position:sticky still works */
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -323,6 +323,33 @@ a.cert-chip:hover::after { opacity: 1; transform: translateY(-50%) translate(2px
 .stack-card__cta { margin-top: 26px; }
 .scroll-stack-end { width: 100%; height: 40vh; }
 .stack-card + .stack-card { margin-top: 22px; }
+
+/* Desktop: pure-CSS sticky scroll-stack — cards pin and pile up as you scroll.
+   No JS, no per-frame rAF, no jank; works natively on every browser. */
+@media (min-width: 861px) {
+  .scroll-stack .stack { padding-bottom: 0; }
+  .scroll-stack .stack-card { position: sticky; margin-top: 0; margin-bottom: clamp(120px, 22vh, 240px); }
+  .scroll-stack .stack-card:nth-of-type(1) { top: 96px; }
+  .scroll-stack .stack-card:nth-of-type(2) { top: 124px; }
+  .scroll-stack .stack-card:nth-of-type(3) { top: 152px; }
+  .scroll-stack .stack-card:nth-of-type(4) { top: 180px; }
+  .scroll-stack .stack-card:last-of-type { margin-bottom: 0; }
+
+  /* Progressive enhancement: cards rise + settle as they enter, driven by the
+     compositor (scroll timeline) — no main-thread rAF, no jank. Browsers
+     without support (Safari/Firefox) just get the clean sticky pin above. */
+  @supports (animation-timeline: view()) {
+    .scroll-stack .stack-card {
+      animation: stack-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 4% cover 14%;
+    }
+    @keyframes stack-rise {
+      from { transform: translateY(54px) scale(0.955); opacity: 0.55; }
+      to   { transform: translateY(0) scale(1); opacity: 1; }
+    }
+  }
+}
 
 @media (max-width: 860px) {
   .stack-card { grid-template-columns: 1fr; min-height: 0; gap: 22px; box-shadow: var(--shadow-md); }
