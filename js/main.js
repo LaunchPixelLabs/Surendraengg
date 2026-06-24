@@ -227,17 +227,32 @@
     const cards = Array.from(root.querySelectorAll('.stack-card'));
     if (!cards.length) return;
     const endEl = root.querySelector('.scroll-stack-end');
-    const cfg = { itemDistance: 110, itemScale: 0.022, itemStackDistance: 24, stackPos: 0.16, scaleEndPos: 0.08, baseScale: 0.88 };
+    
+    // Dynamic config based on screen size
+    const getCfg = () => {
+      const isMobile = window.innerWidth <= 860;
+      return {
+        itemDistance: isMobile ? 60 : 110,
+        itemScale: isMobile ? 0.03 : 0.022,
+        itemStackDistance: isMobile ? 18 : 24,
+        stackPos: isMobile ? 0.12 : 0.16,
+        scaleEndPos: isMobile ? 0.04 : 0.08,
+        baseScale: isMobile ? 0.9 : 0.88
+      };
+    };
+
+    let cfg = getCfg();
     let tops = [], endTop = 0;
-    // The pinned-stack effect is a large-screen scroll interaction. On phones/tablets
-    // it caused cards to overlap the following section, so below this width the cards
-    // fall back to a clean vertical list (CSS handles the single-column layout).
-    const enabled = () => window.matchMedia('(min-width: 861px)').matches;
+    
+    // Always enabled now as requested
+    const enabled = () => true;
+    
     const docTop = (el) => { let t = 0; while (el) { t += el.offsetTop; el = el.offsetParent; } return t; };
     const clamp = (s, a, b) => (s < a ? 0 : s > b ? 1 : (s - a) / (b - a));
     function clearTransforms() { cards.forEach((c) => { c.style.transform = ''; c.style.marginBottom = ''; c.style.willChange = ''; }); }
     function measure() {
       if (!enabled()) { clearTransforms(); return; }
+      cfg = getCfg();
       cards.forEach((c, i) => { c.style.willChange = 'transform'; if (i < cards.length - 1) c.style.marginBottom = cfg.itemDistance + 'px'; });
       tops = cards.map(docTop);
       endTop = endEl ? docTop(endEl) : tops[tops.length - 1] + cards[cards.length - 1].offsetHeight;
@@ -275,8 +290,10 @@
       (function loop() { const y = window.scrollY || window.pageYOffset || 0; if (y !== last) { last = y; apply(y); } requestAnimationFrame(loop); })();
     }
   }
-  // Pinned scroll-stack removed for performance — division cards render as a clean
-  // static layout via CSS. (initScrollStack kept above but intentionally not invoked.)
+  
+  if (!prefersReduced) {
+    $$('[data-scroll-stack]').forEach(initScrollStack);
+  }
 
   /* =========================================================
      7c · SCROLL-REACTIVE MARQUEE
@@ -374,25 +391,33 @@
   })();
 
   /* =========================================================
-     10 · CONTACT FORM (validation + mailto)
+     10 · CONTACT FORM
+     Submits natively (multipart POST) to FormSubmit so optional file
+     attachments are delivered. JS only enhances UX — it never blocks submit.
      ========================================================= */
   const form = $('#contactForm'), note = $('#formNote');
   if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const d = new FormData(form);
-      const name = (d.get('name') || '').toString().trim();
-      const email = (d.get('email') || '').toString().trim();
-      const scope = (d.get('scope') || '').toString().trim();
-      if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !scope) { if (note) { note.style.color = 'var(--orange)'; note.textContent = 'Please add your name, a valid email and a scope of work.'; } return; }
-      const company = (d.get('company') || '').toString().trim();
-      const message = (d.get('message') || '').toString().trim();
-      const subject = encodeURIComponent(`Project enquiry — ${scope}${company ? ' · ' + company : ''}`);
-      const body = encodeURIComponent(`Name: ${name}\nCompany: ${company}\nEmail: ${email}\nScope: ${scope}\n\n${message}`);
-      if (note) { note.style.color = 'var(--orange)'; note.textContent = 'Opening your email client to send this enquiry…'; }
-      window.location.href = `mailto:surendra.engg@rediffmail.com?subject=${subject}&body=${body}`;
-      setTimeout(() => { if (note) { note.style.color = '#7CFFA0'; note.textContent = 'Thank you, ' + name + '. We will respond within one business day.'; } form.reset(); }, 800);
+    // Show the chosen attachment filename
+    const fileInput = form.querySelector('input[type="file"]');
+    const fileNameEl = $('#cf-file-name');
+    if (fileInput && fileNameEl) {
+      fileInput.addEventListener('change', () => {
+        fileNameEl.textContent = (fileInput.files && fileInput.files.length) ? '  ·  ' + fileInput.files[0].name : '';
+      });
+    }
+    // Feedback on submit (native validation runs first; if invalid, this still fires
+    // but the browser blocks navigation, so just show a sending state)
+    form.addEventListener('submit', () => {
+      if (!form.checkValidity()) return;
+      const btn = form.querySelector('button[type="submit"]');
+      if (btn) { btn.disabled = true; btn.style.opacity = '0.7'; }
+      if (note) { note.style.color = 'var(--orange-ink)'; note.textContent = 'Sending your enquiry…'; }
     });
+    // Success message after FormSubmit redirects back with ?sent=1
+    if (note && /[?&]sent=1/.test(location.search)) {
+      note.style.color = '#1a8a4a';
+      note.textContent = 'Thank you — your enquiry has been sent. We will respond within one business day.';
+    }
   }
 
   // keep ScrollTrigger measurements correct after full load

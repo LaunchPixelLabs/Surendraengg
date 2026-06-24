@@ -321,7 +321,7 @@ a.cert-chip:hover::after { opacity: 1; transform: translateY(-50%) translate(2px
 .stack-card__list li { font-size: 0.82rem; padding-left: 16px; position: relative; color: var(--ink-2); }
 .stack-card__list li::before { content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--orange); }
 .stack-card__cta { margin-top: 26px; }
-.scroll-stack-end { width: 100%; height: 1px; }
+.scroll-stack-end { width: 100%; height: 40vh; }
 .stack-card + .stack-card { margin-top: 22px; }
 
 @media (max-width: 860px) {
@@ -409,6 +409,16 @@ a.crow:hover { border-color: var(--orange); transform: translateX(4px); box-shad
 }
 .field select option { background: #fff; color: var(--ink); }
 .cform__note { margin-top: 14px; font-size: 0.85rem; color: var(--orange-ink); min-height: 18px; }
+
+/* optional file attachment */
+.field--file { display: block; margin-bottom: 20px; }
+.file-drop { position: relative; display: flex; align-items: center; gap: 12px; min-height: 58px; padding: 14px 16px; box-sizing: border-box; border: 1px dashed var(--line-2); border-radius: 12px; background: var(--bg-soft); color: var(--muted); font-size: 0.88rem; line-height: 1.4; cursor: pointer; transition: border-color .3s, background .3s, color .3s; }
+.file-drop:hover { border-color: var(--orange); background: #fff; color: var(--ink-2); }
+.file-drop svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--orange-ink); }
+.file-drop b { color: var(--ink); font-weight: 600; }
+.file-drop em { font-style: normal; opacity: 0.65; }
+.file-drop .file-name { display: block; color: var(--orange-ink); font-weight: 600; margin-top: 2px; }
+.file-drop input[type="file"] { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
 
 /* ============================================================
    FOOTER  (light paper · dark logo visible · top divider)
