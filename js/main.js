@@ -59,18 +59,10 @@
   /* =========================================================
      2 · LENIS SMOOTH SCROLL  (+ ScrollTrigger sync)
      ========================================================= */
+  // Native scrolling for reliability & performance. Lenis smooth-scroll was removed:
+  // it drove a per-frame rAF loop and fought ScrollTrigger + the stack transforms,
+  // which caused the jank and scroll-stack glitching on real devices.
   let lenis = null;
-  if (typeof Lenis !== 'undefined' && !prefersReduced && !isTouch) {
-    lenis = new Lenis({ duration: 1.15, lerp: 0.09, smoothWheel: true });
-    if (hasGSAP && window.ScrollTrigger) {
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add((t) => lenis.raf(t * 1000));
-      gsap.ticker.lagSmoothing(0);
-    } else {
-      const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
-      requestAnimationFrame(raf);
-    }
-  }
 
   /* In-page anchor scrolling */
   $$('a[href^="#"]').forEach((a) => {
@@ -163,8 +155,10 @@
         el.classList.add('is-in');
         io.unobserve(el);
       });
-    }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px 18% 0px' });
     revealEls.forEach((el) => io.observe(el));
+    // Failsafe: content must never stay invisible if a scroll/observer tick is missed.
+    window.addEventListener('load', () => setTimeout(() => revealEls.forEach((el) => el.classList.add('is-in')), 900));
 
     // sibling stagger for [data-stagger] children
     $$('[data-stagger]').forEach((parent) => {
@@ -217,7 +211,7 @@
   /* =========================================================
      7 · SCRUB PARALLAX
      ========================================================= */
-  if (hasGSAP && window.ScrollTrigger && !prefersReduced) {
+  if (hasGSAP && window.ScrollTrigger && !prefersReduced && !isTouch) {
     const para = (sel, yp) => $$(sel).forEach((el) => gsap.to(el, { yPercent: yp, ease: 'none', scrollTrigger: { trigger: el.closest('section') || el, start: 'top bottom', end: 'bottom top', scrub: true } }));
     $$('.hero__bg img').forEach((el) => gsap.to(el, { yPercent: 18, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } }));
     $$('.hero__blueprint').forEach((el) => gsap.to(el, { yPercent: 30, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } }));
@@ -281,7 +275,8 @@
       (function loop() { const y = window.scrollY || window.pageYOffset || 0; if (y !== last) { last = y; apply(y); } requestAnimationFrame(loop); })();
     }
   }
-  if (!prefersReduced) $$('[data-scroll-stack]').forEach(initScrollStack);
+  // Pinned scroll-stack removed for performance — division cards render as a clean
+  // static layout via CSS. (initScrollStack kept above but intentionally not invoked.)
 
   /* =========================================================
      7c · SCROLL-REACTIVE MARQUEE
